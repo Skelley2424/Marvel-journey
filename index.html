@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><meta content="#080a0f" name="theme-color"/><link href="manifest.webmanifest" rel="manifest"/><title>Marvel Journey 2.0</title>
+<style>
+:root{--bg:#080a0f;--card:#11161f;--card2:#181e29;--line:#293342;--text:#f5f7fb;--muted:#9ba7b7;--red:#ef3340;--red2:#ff747d;--green:#3cdd95;--gold:#f5c451;--blue:#75adff}
+*{box-sizing:border-box}html{background:var(--bg)}body{margin:0;color:var(--text);background:radial-gradient(circle at 92% 0,rgba(239,51,64,.16),transparent 30%),var(--bg);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}.shell{max-width:840px;margin:auto;padding:17px 14px 108px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.brand{display:flex;gap:11px;align-items:center}.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(145deg,var(--red),#94101a);display:grid;place-items:center;font-weight:950;box-shadow:0 10px 28px #0008}.brand h1{font-size:1.16rem;margin:0}.muted{font-size:.78rem;color:var(--muted)}.btn{border:1px solid var(--line);background:var(--card2);color:var(--text);padding:9px 12px;border-radius:11px}.panel{display:none}.panel.active{display:block}.hero,.card,.list{background:rgba(17,22,31,.95);border:1px solid var(--line);border-radius:18px}.hero{padding:19px}.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.66rem;color:#ff8189;font-weight:850}.hero-row{display:flex;justify-content:space-between;align-items:end;gap:10px;margin-top:8px}.hero h2{font-size:1.45rem;margin:0}.pct{font-size:1.5rem;font-weight:950}.bar{height:11px;background:#242c38;border-radius:99px;overflow:hidden;margin:15px 0 8px}.bar div{height:100%;background:linear-gradient(90deg,var(--red),var(--red2));border-radius:99px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:13px 0}.card{padding:15px}.card h3{font-size:.76rem;color:var(--muted);margin:0 0 7px}.metric{font-weight:850;line-height:1.25}.section{display:flex;justify-content:space-between;align-items:center;margin:21px 2px 10px;gap:8px}.section h2{font-size:1rem;margin:0}.search{width:100%;border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:12px;padding:11px;margin-bottom:9px}.filters{display:flex;gap:7px;overflow:auto;padding-bottom:6px;margin-bottom:8px}.chip{white-space:nowrap;border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:99px;padding:8px 11px;font-size:.75rem;font-weight:800}.chip.active{background:var(--red);border-color:var(--red);color:white}.select{width:100%;border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:11px;padding:10px;margin-bottom:10px}.list{overflow:hidden;margin-bottom:10px}.list-head{display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;padding:14px}.list-title{font-weight:900}.list-desc{font-size:.76rem;color:var(--muted);line-height:1.35;margin-top:5px}.meta{font-size:.73rem;color:var(--muted);margin-top:5px}.toggle{border:0;background:none;color:var(--muted);font-size:1.15rem}.badge{display:inline-block;font-size:.62rem;font-weight:850;border-radius:99px;padding:4px 7px;margin-left:4px;border:1px solid rgba(239,51,64,.32);color:#ff9fa6;background:rgba(239,51,64,.1)}.issues{display:none;border-top:1px solid var(--line);background:#0d1016}.list.open .issues{display:block}.issue{display:flex;align-items:center;gap:10px;padding:11px 14px;border-bottom:1px solid #1e2631}.issue input{width:19px;height:19px;accent-color:var(--green)}.issue-main{flex:1}.issue-title{font-size:.87rem}.issue.done .issue-title{text-decoration:line-through;color:#6d7786}.issue-sub{font-size:.69rem;color:var(--muted);margin-top:3px}.optional{font-size:.62rem;color:#d3bd7c}.rating{display:none;padding:13px 14px;border-top:1px solid var(--line)}.rating.show{display:block}.stars button{border:0;background:none;color:#4b5563;font-size:1.6rem;padding:0 4px 0 0}.stars button.on{color:var(--gold)}.note{width:100%;min-height:70px;margin-top:8px;border:1px solid var(--line);background:#10141b;color:var(--text);border-radius:10px;padding:9px}.stats{display:grid;gap:0}.stat{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.stat:last-child{border:0}.notice{padding:13px;border:1px solid #433b20;background:#1a1810;color:#ead89c;border-radius:13px;font-size:.8rem;line-height:1.4;margin-bottom:11px}.nav{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);width:min(calc(100% - 24px),816px);display:grid;grid-template-columns:repeat(4,1fr);padding:8px;border:1px solid var(--line);background:rgba(12,15,21,.95);backdrop-filter:blur(16px);border-radius:18px;box-shadow:0 15px 35px #0008}.nav button{border:0;background:none;color:var(--muted);padding:10px 4px;border-radius:11px;font-weight:800;font-size:.75rem}.nav button.active{background:var(--card2);color:white}
+@media(max-width:500px){.grid{grid-template-columns:1fr}.hero h2{font-size:1.28rem}}
+</style></head><body><main class="shell">
+<header class="top"><div class="brand"><div class="logo">M</div><div><h1>Marvel Journey</h1><div class="muted">Version 2.0.1 · Safari fix</div></div></div><button class="btn" id="topBackup">Backup</button></header>
+<section class="panel active" id="home"><div class="hero"><div class="eyebrow">Overall tracked progress</div><div class="hero-row"><h2>Continuity + Essentials</h2><div class="pct" id="pct">0%</div></div><div class="bar"><div id="bar"></div></div><div class="muted" id="count"></div></div><div class="grid"><div class="card"><h3>Next issue</h3><div class="metric" id="next"></div></div><div class="card"><h3>Current collection</h3><div class="metric" id="current"></div></div><div class="card"><h3>Historical progress</h3><div class="metric">132 issues through #401</div></div><div class="card"><h3>Average collection rating</h3><div class="metric" id="avg">—</div></div></div><div class="section"><h2>Track progress</h2></div><div class="grid"><div class="card"><h3>Continuity core</h3><div class="metric" id="contStat"></div></div><div class="card"><h3>Road to Doomsday</h3><div class="metric" id="doomStat"></div></div><div class="card"><h3>Recommended</h3><div class="metric" id="recStat"></div></div><div class="card"><h3>Collections completed</h3><div class="metric" id="collectionStat"></div></div></div></section>
+<section class="panel" id="library"><div class="section"><h2>Reading library</h2></div><input class="search" id="search" placeholder="Search a title, issue, arc or tag"/><select class="select" id="era"><option value="all">All eras</option></select><div class="filters"><button class="chip active" data-filter="all">All</button><button class="chip" data-filter="continuity">Continuity</button><button class="chip" data-filter="doomsday">Doomsday</button><button class="chip" data-filter="recommended">Recommended</button><button class="chip" data-filter="unfinished">Unfinished</button></div><div id="lists"></div></section>
+<section class="panel" id="roadmap"><div class="section"><h2>Era roadmap</h2></div><div class="notice">This roadmap combines the Continuity Guide's modern chapter structure with curated issue-level paths. “Continuity core” is a practical core list, not a claim that every collection exactly duplicates the guide's proprietary sequence.</div><div id="eras"></div></section>
+<section class="panel" id="settings"><div class="section"><h2>Stats &amp; data</h2></div><div class="card stats" id="stats"></div><div class="section"><h2>Backup</h2></div><div class="notice">Version 2.0 reads your previous Version 1.0/Phase 2 save automatically. Keep your exported backup until you confirm your progress.</div><div class="card"><div class="stat"><div><strong>Export progress</strong><div class="muted">Checkmarks, ratings, notes and open sections.</div></div><button class="btn" id="exportBtn">Export</button></div><div class="stat"><div><strong>Import progress</strong><div class="muted">Supports earlier Marvel Journey JSON backups.</div></div><button class="btn" id="importBtn">Import</button><input accept=".json,application/json" hidden="" id="fileInput" type="file"/></div><div class="stat"><div><strong>Reset</strong><div class="muted">Clear Version 2.0 progress.</div></div><button class="btn" id="resetBtn">Reset</button></div></div></section>
+</main><nav class="nav"><button class="active" data-panel="home">Home</button><button data-panel="library">Library</button><button data-panel="roadmap">Roadmap</button><button data-panel="settings">Stats</button></nav>
+<script src="config.js?v=201"></script><script src="reading-lists.js?v=201"></script><script>
+(() => {
+  "use strict";
+
+  const $ = (id) => document.getElementById(id);
+  const els = {
+    pct: $("pct"),
+    bar: $("bar"),
+    count: $("count"),
+    next: $("next"),
+    current: $("current"),
+    avg: $("avg"),
+    contStat: $("contStat"),
+    doomStat: $("doomStat"),
+    recStat: $("recStat"),
+    collectionStat: $("collectionStat"),
+    lists: $("lists"),
+    eras: $("eras"),
+    stats: $("stats"),
+    search: $("search"),
+    era: $("era"),
+    topBackup: $("topBackup"),
+    exportBtn: $("exportBtn"),
+    importBtn: $("importBtn"),
+    fileInput: $("fileInput"),
+    resetBtn: $("resetBtn")
+  };
+
+  if (!window.MJ_READING || !window.MJ_CONFIG) {
+    document.body.insertAdjacentHTML(
+      "afterbegin",
+      '<div style="position:fixed;z-index:9999;left:12px;right:12px;top:12px;padding:12px;border-radius:12px;background:#5b1118;color:white;font-family:sans-serif">Marvel Journey could not load its database files. Confirm that config.js and reading-lists.js are in the repository root.</div>'
+    );
+    return;
+  }
+
+  const KEY = "marvelJourneyV2";
+  const DEFAULT_STATE = {
+    checked: {},
+    ratings: {},
+    notes: {},
+    open: { "planet-x-finish": true },
+    filter: "all",
+    era: "all",
+    search: ""
+  };
+
+  let prior = {};
+  for (const key of ["marvelJourneyV2", "marvelJourneyV1"]) {
+    try {
+      const candidate = JSON.parse(localStorage.getItem(key) || "{}");
+      if (candidate && Object.keys(candidate).length) {
+        prior = candidate;
+        break;
+      }
+    } catch (_) {}
+  }
+
+  let state = {
+    ...DEFAULT_STATE,
+    ...prior,
+    checked: { ...(prior.checked || {}) },
+    ratings: { ...(prior.ratings || {}) },
+    notes: { ...(prior.notes || {}) },
+    open: { ...DEFAULT_STATE.open, ...(prior.open || {}) }
+  };
+
+  function save() {
+    localStorage.setItem(KEY, JSON.stringify(state));
+    render();
+  }
+
+  function allEntries() {
+    return window.MJ_READING.lists.flatMap((list) =>
+      list.issues.map((issue) => ({ ...issue, list }))
+    );
+  }
+
+  function matchesCategory(list, category) {
+    if (category === "all") return true;
+    if (category === "unfinished") {
+      return list.issues.some((issue) => !state.checked[issue.id]);
+    }
+    if (category === "continuity") {
+      return ["continuity", "both"].includes(list.category);
+    }
+    if (category === "doomsday") {
+      return (
+        ["doomsday", "both"].includes(list.category) ||
+        list.tags.includes("Doomsday")
+      );
+    }
+    return list.category === category;
+  }
+
+  function listStats(list) {
+    const done = list.issues.filter((issue) => state.checked[issue.id]).length;
+    const total = list.issues.length;
+    return {
+      done,
+      total,
+      pct: total ? Math.round((done / total) * 100) : 0,
+      complete: total > 0 && done === total
+    };
+  }
+
+  function categoryStats(category) {
+    const unique = new Map();
+    for (const entry of allEntries()) {
+      if (matchesCategory(entry.list, category)) unique.set(entry.id, entry);
+    }
+    const values = [...unique.values()];
+    const done = values.filter((entry) => state.checked[entry.id]).length;
+    return {
+      done,
+      total: values.length,
+      pct: values.length ? Math.round((done / values.length) * 100) : 0
+    };
+  }
+
+  function nextUnread() {
+    const priorityIds = [
+      "planet-x-finish",
+      "avengers-disassembled",
+      "new-avengers-bendis-1",
+      "house-of-m-main",
+      "doom-foundations",
+      "hickman-fantastic-four",
+      "hickman-avengers",
+      "secret-wars-2015"
+    ];
+
+    for (const id of priorityIds) {
+      const list = window.MJ_READING.lists.find((candidate) => candidate.id === id);
+      if (!list) continue;
+      const issue = list.issues.find((candidate) => !state.checked[candidate.id]);
+      if (issue) return { issue, list };
+    }
+
+    for (const list of window.MJ_READING.lists) {
+      const issue = list.issues.find((candidate) => !state.checked[candidate.id]);
+      if (issue) return { issue, list };
+    }
+    return null;
+  }
+
+  function renderHome() {
+    const unique = new Map(allEntries().map((entry) => [entry.id, entry]));
+    const values = [...unique.values()];
+    const done = values.filter((entry) => state.checked[entry.id]).length;
+    const pct = values.length ? Math.round((done / values.length) * 100) : 0;
+    const nextEntry = nextUnread();
+
+    els.pct.textContent = `${pct}%`;
+    els.bar.style.width = `${pct}%`;
+    els.count.textContent =
+      `${window.MJ_READING.historicalCompleted + done} total tracked completions including your saved history`;
+    els.next.textContent = nextEntry ? nextEntry.issue.title : "All loaded issues complete";
+    els.current.textContent = nextEntry ? nextEntry.list.title : "Complete";
+
+    const ratings = Object.values(state.ratings).filter(Number);
+    els.avg.textContent = ratings.length
+      ? `${(ratings.reduce((a, b) => a + b, 0) / ratings.length).toFixed(1)} / 5`
+      : "—";
+
+    const cardMap = [
+      ["contStat", "continuity"],
+      ["doomStat", "doomsday"],
+      ["recStat", "recommended"]
+    ];
+    for (const [elementKey, category] of cardMap) {
+      const stats = categoryStats(category);
+      els[elementKey].textContent = `${stats.done} / ${stats.total} · ${stats.pct}%`;
+    }
+
+    const completeCollections = window.MJ_READING.lists.filter(
+      (list) => listStats(list).complete
+    ).length;
+    els.collectionStat.textContent =
+      `${completeCollections} / ${window.MJ_READING.lists.length}`;
+  }
+
+  function renderLists() {
+    const query = (state.search || "").toLowerCase();
+    els.lists.innerHTML = "";
+
+    for (const list of window.MJ_READING.lists) {
+      if (!matchesCategory(list, state.filter)) continue;
+      if (state.era !== "all" && list.era !== state.era) continue;
+
+      const searchable = [
+        list.title,
+        list.description,
+        list.era,
+        ...list.tags,
+        ...list.issues.flatMap((issue) => [
+          issue.title,
+          issue.arc,
+          ...(issue.tags || [])
+        ])
+      ].join(" ").toLowerCase();
+
+      if (query && !searchable.includes(query)) continue;
+
+      const stats = listStats(list);
+      const card = document.createElement("div");
+      card.className = `list${state.open[list.id] ? " open" : ""}`;
+
+      const categoryLabel =
+        list.category === "both"
+          ? "Integrated"
+          : window.MJ_CONFIG.categories[list.category];
+      const badges = [categoryLabel, ...list.tags.slice(0, 2)].filter(Boolean);
+
+      card.innerHTML = `
+        <div class="list-head">
+          <div>
+            <div class="list-title">
+              ${list.title}
+              ${badges.map((badge) => `<span class="badge">${badge}</span>`).join("")}
+            </div>
+            <div class="list-desc">${list.description}</div>
+            <div class="meta">${list.era} · ${stats.done}/${stats.total} · ${stats.pct}%</div>
+          </div>
+          <button class="toggle" type="button">${state.open[list.id] ? "⌃" : "⌄"}</button>
+        </div>
+        <div class="issues"></div>`;
+
+      card.querySelector(".toggle").addEventListener("click", () => {
+        state.open[list.id] = !state.open[list.id];
+        save();
+      });
+
+      const issueBox = card.querySelector(".issues");
+      for (const issue of list.issues) {
+        const done = Boolean(state.checked[issue.id]);
+        const row = document.createElement("label");
+        row.className = `issue${done ? " done" : ""}`;
+        row.innerHTML = `
+          <input type="checkbox" ${done ? "checked" : ""}>
+          <div class="issue-main">
+            <div class="issue-title">${issue.title}</div>
+            <div class="issue-sub">
+              ${issue.arc}${issue.optional ? ' · <span class="optional">Optional</span>' : ""}
+            </div>
+          </div>`;
+
+        row.querySelector("input").addEventListener("change", (event) => {
+          state.checked[issue.id] = event.target.checked;
+          save();
+        });
+        issueBox.appendChild(row);
+      }
+
+      const rating = document.createElement("div");
+      rating.className = `rating${stats.complete ? " show" : ""}`;
+      rating.innerHTML = `
+        <div class="muted">Rate this completed collection</div>
+        <div class="stars"></div>
+        <textarea class="note" placeholder="Your notes"></textarea>`;
+      rating.querySelector(".note").value = state.notes[list.id] || "";
+      rating.querySelector(".note").addEventListener("change", (event) => {
+        state.notes[list.id] = event.target.value;
+        save();
+      });
+
+      for (let star = 1; star <= 5; star += 1) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = "★";
+        button.className = (state.ratings[list.id] || 0) >= star ? "on" : "";
+        button.addEventListener("click", () => {
+          state.ratings[list.id] = star;
+          save();
+        });
+        rating.querySelector(".stars").appendChild(button);
+      }
+
+      issueBox.appendChild(rating);
+      els.lists.appendChild(card);
+    }
+
+    if (!els.lists.children.length) {
+      els.lists.innerHTML = '<div class="card muted">No matching collections.</div>';
+    }
+  }
+
+  function renderEras() {
+    els.eras.innerHTML = "";
+    window.MJ_READING.eras.forEach((eraName, index) => {
+      const matchingLists = window.MJ_READING.lists.filter(
+        (list) => list.era === eraName
+      );
+      const total = matchingLists.reduce(
+        (sum, list) => sum + list.issues.length,
+        0
+      );
+      const done = matchingLists.reduce(
+        (sum, list) =>
+          sum + list.issues.filter((issue) => state.checked[issue.id]).length,
+        0
+      );
+
+      const card = document.createElement("div");
+      card.className = "card";
+      card.style.marginBottom = "10px";
+      card.innerHTML = `
+        <div class="eyebrow">Era ${index + 1}</div>
+        <div class="metric" style="margin-top:5px">${eraName}</div>
+        <div class="muted" style="margin-top:5px">
+          ${
+            matchingLists.length
+              ? `${matchingLists.length} tracked collection${matchingLists.length === 1 ? "" : "s"} · ${done}/${total} complete`
+              : "Roadmap chapter; detailed list expansion pending"
+          }
+        </div>`;
+      els.eras.appendChild(card);
+    });
+  }
+
+  function renderStats() {
+    const unique = new Map(allEntries().map((entry) => [entry.id, entry]));
+    const values = [...unique.values()];
+    const done = values.filter((entry) => state.checked[entry.id]).length;
+
+    els.stats.innerHTML = `
+      <div class="stat"><span>Database version</span><strong>${window.MJ_READING.version}</strong></div>
+      <div class="stat"><span>Collections</span><strong>${window.MJ_READING.lists.length}</strong></div>
+      <div class="stat"><span>Unique tracked issues</span><strong>${values.length}</strong></div>
+      <div class="stat"><span>New issues completed</span><strong>${done}</strong></div>
+      <div class="stat"><span>Historical issues completed</span><strong>${window.MJ_READING.historicalCompleted}</strong></div>
+      <div class="stat"><span>Ratings saved</span><strong>${Object.values(state.ratings).filter(Number).length}</strong></div>`;
+  }
+
+  function render() {
+    renderHome();
+    renderLists();
+    renderEras();
+    renderStats();
+    els.search.value = state.search;
+    els.era.value = state.era;
+  }
+
+  for (const eraName of window.MJ_READING.eras) {
+    const option = document.createElement("option");
+    option.value = eraName;
+    option.textContent = eraName;
+    els.era.appendChild(option);
+  }
+
+  document.querySelectorAll(".nav button").forEach((button) => {
+    button.addEventListener("click", () => {
+      document.querySelectorAll(".nav button").forEach((candidate) => {
+        candidate.classList.toggle("active", candidate === button);
+      });
+      document.querySelectorAll(".panel").forEach((panel) => {
+        panel.classList.toggle("active", panel.id === button.dataset.panel);
+      });
+    });
+  });
+
+  document.querySelectorAll(".chip").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.filter = button.dataset.filter;
+      document.querySelectorAll(".chip").forEach((candidate) => {
+        candidate.classList.toggle("active", candidate === button);
+      });
+      renderLists();
+    });
+  });
+
+  els.search.addEventListener("input", (event) => {
+    state.search = event.target.value;
+    renderLists();
+  });
+  els.era.addEventListener("change", (event) => {
+    state.era = event.target.value;
+    renderLists();
+  });
+
+  function exportBackup() {
+    const blob = new Blob(
+      [JSON.stringify({ ...state, appVersion: "2.0.1" }, null, 2)],
+      { type: "application/json" }
+    );
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = "marvel-journey-v2-backup.json";
+    anchor.click();
+    URL.revokeObjectURL(url);
+  }
+
+  els.exportBtn.addEventListener("click", exportBackup);
+  els.topBackup.addEventListener("click", exportBackup);
+  els.importBtn.addEventListener("click", () => els.fileInput.click());
+  els.fileInput.addEventListener("change", async (event) => {
+    try {
+      const imported = JSON.parse(await event.target.files[0].text());
+      state = {
+        ...DEFAULT_STATE,
+        ...imported,
+        checked: { ...(imported.checked || {}) },
+        ratings: { ...(imported.ratings || {}) },
+        notes: { ...(imported.notes || {}) },
+        open: { ...DEFAULT_STATE.open, ...(imported.open || {}) }
+      };
+      save();
+      alert("Backup imported.");
+    } catch (_) {
+      alert("Could not import that backup.");
+    }
+  });
+
+  els.resetBtn.addEventListener("click", () => {
+    if (confirm("Reset Version 2.0 progress?")) {
+      state = structuredClone(DEFAULT_STATE);
+      save();
+    }
+  });
+
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./service-worker.js?v=201").catch(() => {});
+  }
+
+  render();
+})();
+</script></body></html>
