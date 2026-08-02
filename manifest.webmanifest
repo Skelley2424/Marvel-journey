@@ -1,9 +1,0 @@
-{
-  "name": "Marvel Journey",
-  "short_name": "Marvel Journey",
-  "start_url": "./",
-  "display": "standalone",
-  "background_color": "#090b10",
-  "theme_color": "#090b10",
-  "description": "A personal Marvel comics reading tracker."
-}
