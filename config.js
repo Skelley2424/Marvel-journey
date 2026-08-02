@@ -1,1 +1,0 @@
-window.MJ_CONFIG={"appVersion":"2.0.0","saveKey":"marvelJourneyV2","legacyKeys":["marvelJourneyV1","marvelJourneyV2"],"categories":{"continuity":"Continuity core","doomsday":"Road to Doomsday","both":"Integrated","recommended":"Recommended"}};
