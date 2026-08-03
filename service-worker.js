@@ -1,4 +1,4 @@
-const CACHE='marvel-journey-v2-201';
+const CACHE='marvel-journey-v2-210';
 const ASSETS=['./','./index.html','./manifest.webmanifest','./config.js','./reading-lists.js'];
 self.addEventListener('install',event=>{
   self.skipWaiting();
